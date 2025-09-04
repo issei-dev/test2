@@ -11,7 +11,17 @@ const initialAppData = {
 };
 
 // グローバルなappData変数の宣言
-let appData = {};
+// ... (既存の common.js のコード) ...
+
+let appData = {
+    totalPoints: 0,
+    characters: [],
+    // 日付ごとのスタンプの記録を格納する新しいオブジェクト
+    // 例: { "2025-09-04": [{text: "そろたっち"}, {text: "音読"}] }
+    stamps: {}
+};
+
+// ... (既存の saveData, loadData 関数) ...
 
 // データをlocalStorageから読み込む関数（初期化処理も含む）
 function loadData() {
