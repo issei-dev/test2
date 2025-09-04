@@ -1,17 +1,30 @@
-// アプリケーション全体で使うデータ構造
-let appData = {
+// アプリケーション全体で使うデータ構造の「ひな形」
+const initialAppData = {
     lastStampDate: null,
     consecutiveDays: 0,
     totalPoints: 0,
-    characters: [], // 今は空
+    characters: [
+        { id: 1, level: 1, evolutionIndex: 0 },
+        { id: 2, level: 1, evolutionIndex: 0 }
+    ],
     stampHistory: []
 };
 
-// データをlocalStorageから読み込む関数
+// グローバルなappData変数の宣言
+let appData = {};
+
+// データをlocalStorageから読み込む関数（初期化処理も含む）
 function loadData() {
     const jsonData = localStorage.getItem('myStudyApp');
     if (jsonData) {
+        // 保存されたデータがある場合
         appData = JSON.parse(jsonData);
+    } else {
+        // 保存されたデータが全くない場合（アプリの初回起動時）
+        appData = initialAppData;
+        saveData(); // 初期データを保存
+    }
+}
     }
 }
 
