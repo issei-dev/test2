@@ -11,8 +11,18 @@
 
     <!-- 各ページのコンテンツをここに書く -->
     <main>
-        <h1>スタンプ</h1>
-        <p>（ここにスタンプページの内容が入ります）</p>
+        <main>
+    <h1 id="todayDate">----年--月--日</h1>
+    <p class="point-display">所持ポイント: <span id="totalPointsDisplay">0</span></p>
+
+    <div class="card">
+        <h2>今日のチャレンジ</h2>
+        <div id="stampContainer" class="stamp-container">
+            <!-- スタンプはJavaScriptで生成します -->
+        </div>
+        <p id="stampMessage" class="stamp-message"></p>
+    </div>
+</main>
     </main>
 
     <!-- 共通のナビゲーションバー -->
