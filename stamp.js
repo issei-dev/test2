@@ -1,19 +1,32 @@
 
-// --- HTML要素の取得 ---
-const todayDateEl = document.getElementById('todayDate');
-const totalPointsDisplayEl = document.getElementById('totalPointsDisplay');
-const stampContainerEl = document.getElementById('stampContainer');
-const stampMessageEl = document.getElementById('stampMessage');
-
-// --- グローバル変数 ---
-const STAMP_COUNT = 5; // スタンプの数
-let stampedCountToday = 0; // 今日押したスタンプの数
-
-// --- メイン処理 ---
-// ページが読み込まれたときに実行
+// ページが完全に読み込まれてから、全ての処理を開始する
 document.addEventListener('DOMContentLoaded', () => {
-    loadData(); // 共通のデータ読み込み関数を呼ぶ
+    // --- HTML要素の取得 ---
+    // この処理をイベントリスナーの中に移動する
+    const todayDateEl = document.getElementById('todayDate');
+    const totalPointsDisplayEl = document.getElementById('totalPointsDisplay');
+    const stampContainerEl = document.getElementById('stampContainer');
+    const stampMessageEl = document.getElementById('stampMessage');
+
+    // --- グローバル変数 ---
+    const STAMP_COUNT = 5;
+    let stampedCountToday = 0;
+
+    // --- メイン処理 ---
+    // DOMContentLoadedの中で直接メインの処理を呼び出す
+    loadData();
     initializePage();
+
+    // ↓ここから下の関数定義はそのまま
+    function initializePage() {
+        // ... (以下、initializePageの中身は変更なし)
+    }
+
+    function renderStamps() {
+        // ... (以下、renderStampsの中身は変更なし)
+    }
+    
+    // ... (他の関数も同様にこの中に配置)
 });
 
 // ページ初期化の関数
